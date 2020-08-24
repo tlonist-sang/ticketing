@@ -5,10 +5,12 @@ deploy:
     manifests:
       - ./infra/k8s/*
 build:
-  local:
-    push: false
+#  local:
+#    push: false
+  googleCloudBuild:
+    projectId: plucky-order-286913
   artifacts:
-    - image: tlonist/auth
+    - image: us.gcr.io/plucky-order-286913/auth
       context: auth
       docker:
         dockerfile: Dockerfile

@@ -1,2 +1,4 @@
 .idea
 auth/node_modules
+.DS_Store
+infra/.DS_Store
