@@ -35,8 +35,6 @@ router.post('/api/users/signup',  [
     await user.save();
 
     //Generate Jsonwebtoken
-
-
     const userJwt = jwt.sign({
         id: user.id,
         email: user.email
@@ -47,7 +45,6 @@ router.post('/api/users/signup',  [
         jwt: userJwt
     }
 
-    console.log('User was created!');
     return res.status(201).send(user);
 
 });
