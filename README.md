@@ -22,6 +22,15 @@ Goal: Manipulate Google Kubernetes Clusters in local environment using Skaffold
    - The two commands above create a load balancer in the project of Google Cloud environment.
    - Check from Google Cloud Platform > Networking > Network services, check IP address.
     
+## NPM modularization
+1. Create npm account, make an organization. (Check email if it is the first time)
+2. Create a subdirectory (or anywhere of one's own choice), initialize. (npm init -y)
+3. If the project is typescript based, run. (tsc --init)
+4. Add (or write) files for the module. Customize package.json file (name, version, description, types, files, script etc..)
+5. Initialize as git repository. (git init)
+6. Log into npm. (npm login)
+7. Git add, commit and run npm publish.
+8. Lo and behold! (from npmjs > MY_OWN_ORGANIZATION)
 
-Testing 
+## Testing 
 - jest, supertest

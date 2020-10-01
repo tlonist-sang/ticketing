@@ -5,8 +5,8 @@ import { currentUserRouter } from "./routes/current-user";
 import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
 import { signupRouter } from "./routes/signup";
-import { errorHandler} from "./middlewares/error-handler";
-import { NotFoundErrors } from "./errors/not-found-errors";
+import { errorHandler} from '@tlonist-sgtickets/common';
+import { NotFoundErrors } from '@tlonist-sgtickets/common';
 import cookieSession from "cookie-session";
 
 const app = express();

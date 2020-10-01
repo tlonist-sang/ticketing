@@ -1,8 +1,8 @@
 import express, {Request, Response} from 'express'
 import {body, validationResult} from "express-validator";
-import {validateRequest} from "../middlewares/validate-requests";
+import {validateRequest} from '@tlonist-sgtickets/common';
 import {User} from "../models/user";
-import {BadRequestError} from "../errors/bad-request-error";
+import {BadRequestError} from '@tlonist-sgtickets/common';
 import {Password} from "../services/password";
 import jwt from "jsonwebtoken";
 

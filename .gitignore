@@ -4,3 +4,4 @@ auth/node_modules
 infra/.DS_Store
 client/node_modules
 client/.next
+common
