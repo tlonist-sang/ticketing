@@ -5,3 +5,4 @@ infra/.DS_Store
 client/node_modules
 client/.next
 common
+tickets/node_modules
