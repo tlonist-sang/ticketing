@@ -34,3 +34,9 @@ Goal: Manipulate Google Kubernetes Clusters in local environment using Skaffold
 
 ## Testing 
 - jest, supertest
+
+## Session with JWT 
+
+## NATs Server
+portforwarding for NATS server (forwarding localhost request to created pods)
+kubectl port-forward [nats-id] [port1]:[port2]
