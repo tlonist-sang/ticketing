@@ -1,7 +1,6 @@
-import 'express-async-errors';
-import mongoose from 'mongoose';
-import {app} from "./app";
 import {natsWrapper} from "./nats-wrapper";
+import * as mongoose from "mongoose";
+import {app} from "./app";
 
 const start = async () => {
     if(!process.env.JWT_KEY) {
@@ -24,7 +23,7 @@ const start = async () => {
         throw new Error('CLUSTER_ID must be defined!');
     }
 
-    try {
+    try{
         await natsWrapper.connect(process.env.NATS_CLUSTER_ID, process.env.NATS_CLIENT_ID, process.env.NATS_URL);
         natsWrapper.client.on('close', ()=>{
             console.log('NATS connection closed!');
@@ -38,16 +37,14 @@ const start = async () => {
             useUnifiedTopology: true,
             useCreateIndex: true
         });
-    } catch(err) {
+    }catch(err){
         console.log(err);
     }
     console.log('Connected to MongoDB!');
 
     app.listen(3000, ()=>{
-        console.log('listening on port 3000!!')
+       console.log('listening on port 3000!')
     });
-};
+}
 
 start();
-
-

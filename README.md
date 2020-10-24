@@ -30,13 +30,22 @@ Goal: Manipulate Google Kubernetes Clusters in local environment using Skaffold
 5. Initialize as git repository. (git init)
 6. Log into npm. (npm login)
 7. Git add, commit and run npm publish.
-8. Lo and behold! (from npmjs > MY_OWN_ORGANIZATION)
+8. Check from npmjs > MY_OWN_ORGANIZATION
 
 ## Testing 
 - jest, supertest
 
-## Session with JWT 
+## Authentication flow
+- requireAuth, validateRequest (middlewares)
 
-## NATs Server
+
+## Publish & Subscribe with NATs Server
 portforwarding for NATS server (forwarding localhost request to created pods)
 kubectl port-forward [nats-id] [port1]:[port2]
+
+## DB Connection
+
+## TypeScript with MongoDB
+- interfaces 1: to create a new entity
+- interfaces 2: to describe a saved document (might be different from interface 1)
+- interfaces 3: to describe a model

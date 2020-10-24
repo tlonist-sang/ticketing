@@ -1,5 +1,8 @@
 .idea
 auth/node_modules
+orders/node_modules
+orders/package-lock.json
+tickets/package-lock.json
 .DS_Store
 infra/.DS_Store
 client/node_modules
