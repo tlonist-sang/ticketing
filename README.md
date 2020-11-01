@@ -21,6 +21,9 @@ Goal: Manipulate Google Kubernetes Clusters in local environment using Skaffold
    - run [this command](https://kubernetes.github.io/ingress-nginx/deploy/#gce-gke) 
    - The two commands above create a load balancer in the project of Google Cloud environment.
    - Check from Google Cloud Platform > Networking > Network services, check IP address.
+
+8. Running skaffold dev creates pods listed in the yaml file, enlisting them to Google Cloud.    
+9. From local environment (Docker for Mac), running kubectl get pods (or any other commands) goes to the Google Cloud setting preconfigured.    
     
 ## NPM modularization
 1. Create npm account, make an organization. (Check email if it is the first time)
@@ -38,11 +41,17 @@ Goal: Manipulate Google Kubernetes Clusters in local environment using Skaffold
 ## Authentication flow
 - requireAuth, validateRequest (middlewares)
 
-
 ## Publish & Subscribe with NATs Server
-portforwarding for NATS server (forwarding localhost request to created pods)
-kubectl port-forward [nats-id] [port1]:[port2]
-
+Port-forwarding for NATS server (Forwarding localhost request to created pods)
+kubectl port-forward [nats-id] [8222]:[8222] (localhost:8222/streaming)
+kubectl port-forward [nats-id] [4222]:[4222] (nats server for publishing and listening)
+- Dependencies: "node-nats-streaming"
+- Components:
+    - Publisher : publishes event on Stan.publish()
+    - Listener : listens to events published through Stan.subscribe()
+        - subscriptionOptions() -> configures subscription options
+- Async Communication:
+    
 ## DB Connection
 
 ## TypeScript with MongoDB
