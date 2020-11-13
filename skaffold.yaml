@@ -5,12 +5,12 @@ deploy:
     manifests:
       - ./infra/k8s/*
 build:
-#  local:
-#    push: false
-  googleCloudBuild:
-    projectId: plucky-order-286913
+  local:
+    push: false
+#  googleCloudBuild:
+#    projectId: plucky-order-286913
   artifacts:
-    - image: us.gcr.io/plucky-order-286913/auth
+    - image: tlonist/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -18,7 +18,7 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: us.gcr.io/plucky-order-286913/client
+    - image: tlonist/client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -26,7 +26,7 @@ build:
         manual:
           - src: "**/*.js"
             dest: .
-    - image: us.gcr.io/plucky-order-286913/tickets
+    - image: tlonist/tickets
       context: tickets
       docker:
         dockerfile: Dockerfile
@@ -34,7 +34,7 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: .
-    - image: us.gcr.io/plucky-order-286913/orders
+    - image: tlonist/orders
       context: orders
       docker:
         dockerfile: Dockerfile

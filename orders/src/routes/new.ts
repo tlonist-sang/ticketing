@@ -4,7 +4,7 @@ import {NotFoundErrors, OrderStatus, requireAuth, validateRequest} from "@tlonis
 import {body} from "express-validator";
 import {Ticket} from "../models/ticket";
 import {Order} from "../models/order";
-import {BadRequestError} from "../../../common/src";
+import {BadRequestError} from "@tlonist-sgtickets/common";
 import {natsWrapper} from "../nats-wrapper";
 import {OrderCreatedPublisher} from "../events/publishers/order-created-publisher";
 

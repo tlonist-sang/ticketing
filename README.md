@@ -25,6 +25,11 @@ Goal: Manipulate Google Kubernetes Clusters in local environment using Skaffold
 8. Running skaffold dev creates pods listed in the yaml file, enlisting them to Google Cloud.    
 9. From local environment (Docker for Mac), running kubectl get pods (or any other commands) goes to the Google Cloud setting preconfigured.    
     
++) Executing in local environment 
+    - switch to Docker/desktop from docker for mac
+    - update skaffold.yaml and (kubernetes)-depl files. Change gcr images to local docker images
+    - create kubernetes secret keys (kubectl create secret generic jwt-secret --from-literal=JWT_KEY=changeit)    
+    - run skaffold dev
 ## NPM modularization
 1. Create npm account, make an organization. (Check email if it is the first time)
 2. Create a subdirectory (or anywhere of one's own choice), initialize. (npm init -y)
@@ -50,8 +55,16 @@ kubectl port-forward [nats-id] [4222]:[4222] (nats server for publishing and lis
     - Publisher : publishes event on Stan.publish()
     - Listener : listens to events published through Stan.subscribe()
         - subscriptionOptions() -> configures subscription options
-- Async Communication:
-    
+
+- QueueGroupName: Bundles listeners so that only one listener at a time receives the event
+                : better to declare then in separate files.
+- Concurrency Issues:
+    - Versioning: keep track of the versions of events whenever a change is made
+                : when applying events across different pods, make sure to process events in order.
+                : when event records are out of version, the pod won't call ack, and will time out. During that window of time, hopefully a correct ordered event will arrive.
+                : Mongoose and mongoDB can handle this! (Optimistic Concurrency Control)
+    - 
+                
 ## DB Connection
 
 ## TypeScript with MongoDB

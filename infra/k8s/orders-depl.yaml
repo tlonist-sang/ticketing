@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: orders
-          image: us.gcr.io/plucky-order-286913/orders
+          image: tlonist/orders
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

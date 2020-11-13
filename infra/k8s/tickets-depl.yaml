@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: tickets
-          image: us.gcr.io/plucky-order-286913/tickets
+          image: tlonist/tickets
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
