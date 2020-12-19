@@ -66,8 +66,17 @@ kubectl port-forward [nats-id] [4222]:[4222] (nats server for publishing and lis
     - 
                 
 ## DB Connection
+- logging into mongo
+    kubectl exec -it name_of_mongodb_depl mongo
+
 
 ## TypeScript with MongoDB
 - interfaces 1: to create a new entity
 - interfaces 2: to describe a saved document (might be different from interface 1)
 - interfaces 3: to describe a model
+
+
+## Becoming independent from mongoose-update-if-current
+#### what it does
+- updates the version number on records before they are saved
+- customizes the find-and-update operation to look for the correct version
