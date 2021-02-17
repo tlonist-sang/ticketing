@@ -19,7 +19,7 @@ const setup = async () => {
 
     // Create a fake data object
     const data: TicketUpdatedEvent['data'] = {
-        id: ticket.id,
+        id: ticket.id!,
         version: ticket.version + 1,
         title: 'new concert',
         price: 999,

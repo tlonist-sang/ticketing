@@ -30,6 +30,7 @@ Goal: Manipulate Google Kubernetes Clusters in local environment using Skaffold
     - update skaffold.yaml and (kubernetes)-depl files. Change gcr images to local docker images
     - create kubernetes secret keys (kubectl create secret generic jwt-secret --from-literal=JWT_KEY=changeit)    
     - run skaffold dev
+    
 ## NPM modularization
 1. Create npm account, make an organization. (Check email if it is the first time)
 2. Create a subdirectory (or anywhere of one's own choice), initialize. (npm init -y)
@@ -71,9 +72,9 @@ kubectl port-forward [nats-id] [4222]:[4222] (nats server for publishing and lis
 
 
 ## TypeScript with MongoDB
-- interfaces 1: to create a new entity
-- interfaces 2: to describe a saved document (might be different from interface 1)
-- interfaces 3: to describe a model
+- interface 1: to create a new entity
+- interface 2: to describe a saved document (might be different from interface 1)
+- interface 3: to describe a model
 
 
 ## Becoming independent from mongoose-update-if-current

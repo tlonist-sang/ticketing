@@ -15,7 +15,7 @@ export class TicketCreatedListener extends Listener<TicketCreatedEvent>{
 
         //make sure to have the same ID
         const ticket = Ticket.build({
-            id,title, price
+            id: id!, title, price
         });
 
         await ticket.save();
